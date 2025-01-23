@@ -2,7 +2,7 @@ package com.Yedam;
 
 public class Variable1 {
 	
-	public static void main(string[] args) {
+	public static void main(String[] args) {
 		// int(4byte)
 		int num1 = 1101111;
 		
