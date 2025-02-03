@@ -91,7 +91,7 @@ public class BookExe {
 		System.out.println("도서명을 입력하세요 : ");
 		String name = scn.nextLine();
 		Calculator cal = new Calculator();
-		cal.getBookInfo(name, bookRepository).showDetailInfo();
+//		cal.getBookInfo(name, bookRepository).showDetailInfo();
 
 //		for (int i = 0; i < bookRepository.length; i++) {
 //			if (bookRepository[i] != null && bookRepository[i].getBookName().equals(name)) {
