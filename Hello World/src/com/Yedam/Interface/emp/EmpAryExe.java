@@ -2,6 +2,8 @@ package com.Yedam.Interface.emp;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * 배열활용.
@@ -73,9 +75,17 @@ public class EmpAryExe implements EmpDAO {
 	}// end of removeEmp()
 
 	@Override
-	public Employee[] search(Employee emp) {
+	public List<Employee> search(Employee emp) {
+		List<Employee> result = new ArrayList<Employee>();
 
+		for (int i = 0; i < empList.length(); i++) {
+			// indexOf 사용.
+			if (empList.get(i).getEmpName().indexOf(emp.getEmpName()) > -1) {
+				result.add(empList.get(i));
+			}
+		}
 		return null;
+		
 	}
 
 }// end of class

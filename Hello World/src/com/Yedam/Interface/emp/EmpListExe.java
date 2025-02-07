@@ -20,7 +20,6 @@ public class EmpListExe implements EmpDAO {
 		empList.add(new Employee(1021, "김사원", "432-1255"));
 		empList.add(new Employee(1010, "박사장", "333-1212", "2000-01-01", 500));
 	}
-	
 
 	@Override
 	public boolean modifyEmp(Employee emp) {
@@ -33,14 +32,14 @@ public class EmpListExe implements EmpDAO {
 					empList.get(i).setEmpNO(emp.getEmpNO());
 				}
 				try {
-					//값을 변경안하려고 엔터("")일 경우 1900-01-01
-				if (emp.getHireDate().equals( sdf.parse("1900-01-01"))) {
-					empList.get(i).setHireDate(emp.getHireDate());
-				}
-				}catch (ParseException e) {
-					e.printStackTrace();
+					// 값을 변경안하려고 엔터("")일 경우 1900-01-01
+					if (emp.getHireDate().equals(sdf.parse("1900-01-01"))) {
+						empList.get(i).setHireDate(emp.getHireDate());
 					}
-				
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+
 				if (emp.getSalary() != 0) {
 					empList.get(i).setSalary(emp.getSalary());
 				}
@@ -62,15 +61,13 @@ public class EmpListExe implements EmpDAO {
 	}
 
 	@Override
-	public Employee[] search(Employee emp) { // sal 보다 급여가 많은
-		Employee[] result = new Employee[10];
-		int idx = 0;
+	public List<Employee> search(Employee emp) { // sal 보다 급여가 많은
+		List<Employee> result = new ArrayList<Employee>();
 
 		for (int i = 0; i < empList.size(); i++) {
-			//indexOf 사용.
+			// indexOf 사용.
 			if (empList.get(i).getEmpName().indexOf(emp.getEmpName()) > -1) {
-				result[idx] = empList.get(i);
-				idx++;// 0부터 1씩 증가되도록.
+				result.add(empList.get(i));
 			}
 		}
 		return result;
@@ -78,7 +75,7 @@ public class EmpListExe implements EmpDAO {
 
 	@Override
 	public boolean registerEmp(Employee emp) {
-		
+
 		return false;
 	}
 }
