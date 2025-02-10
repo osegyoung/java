@@ -4,6 +4,7 @@ import java.util.List;
 
 /*
  * 등록,수정,삭제,조회.
+ * EmpAryExe.java, EmpListExe, EmpDBExe.java
  */
 public interface EmpDAO {
 

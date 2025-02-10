@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class mainExe {
 	static Scanner scn = new Scanner(System.in);
 	
-	static EmpDAO dao = new EmpAryExe();
+	static EmpDAO dao = new EmpDBExe();
 	
 	public static void main(String[] args) {
 		// 스캐너, run
@@ -32,6 +32,7 @@ public class mainExe {
 			} catch (InputMismatchException e) {
 				// 정상실행이 진행되도록 구성.
 				System.out.println("메뉴를 확인하세요");
+				
 				scn.nextLine();
 				continue;
 			}
