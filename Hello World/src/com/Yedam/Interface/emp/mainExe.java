@@ -13,9 +13,9 @@ import java.util.Scanner;
 
 public class mainExe {
 	static Scanner scn = new Scanner(System.in);
-	
+	// 배열, 컬렉션. Database.
 	static EmpDAO dao = new EmpDBExe();
-	
+
 	public static void main(String[] args) {
 		// 스캐너, run
 		boolean run = true;
@@ -32,7 +32,7 @@ public class mainExe {
 			} catch (InputMismatchException e) {
 				// 정상실행이 진행되도록 구성.
 				System.out.println("메뉴를 확인하세요");
-				
+
 				scn.nextLine();
 				continue;
 			}
@@ -47,7 +47,7 @@ public class mainExe {
 						empNo = Integer.parseInt(scn.nextLine());
 						break;
 					} catch (InputMismatchException e) { // 잘못 입력시 넘어옴
-						System.out.println("사원번호를 다시 입력하세요");											
+						System.out.println("사원번호를 다시 입력하세요");
 					}
 				}
 
@@ -87,13 +87,13 @@ public class mainExe {
 
 			case 3:// 삭제
 				try {
-				remove();
-				}catch (NumberFormatException e) {
+					remove();
+				} catch (NumberFormatException e) {
 					System.out.println("사원번호를 확인");
 				}
 				break;
 
-			case 4:// 목록.
+			case 4:// 조회.
 					// 조회조건(급여 이상)
 //				System.out.println("조회 급여조건 >> ");
 //				sal = Integer.parseInt(scn.nextLine());
@@ -126,23 +126,23 @@ public class mainExe {
 			default:
 				System.out.println("메뉴를 확인하세요");
 
-			}//end of switch
-			
+			}// end of switch
+
 		} // end of while
 		System.out.println("end of prog");
-		
-	}//end of main
-	
-	//예외 떠넘기기 예제.
+
+	}// end of main
+
+	// 예외 떠넘기기 예제.
 	static void remove() throws NumberFormatException { // remove 호출, 예외 떠넘기기
 		System.out.println("사원번호 >> ");
-		
+
 		int empNo = Integer.parseInt(scn.nextLine());
 
 		if (dao.removeEmp(empNo)) {
 			System.out.println("삭제완료");
 		}
-		
-	}//end of remove.
-	
-}//end of class.
+
+	}// end of remove.
+
+}// end of class.
