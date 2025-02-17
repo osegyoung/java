@@ -78,10 +78,10 @@ public class EmpAryExe implements EmpDAO {
 	public List<Employee> search(Employee emp) {
 		List<Employee> result = new ArrayList<Employee>();
 
-		for (int i = 0; i < empList.length(); i++) {
+		for (int i = 0; i < employees.length; i++) {
 			// indexOf 사용.
-			if (empList.get(i).getEmpName().indexOf(emp.getEmpName()) > -1) {
-				result.add(empList.get(i));
+			if (employees[i] != null && employees[i].getEmpName().indexOf(emp.getEmpName()) > -1) {
+				result.add(employees[i]);
 			}
 		}
 		return null;
