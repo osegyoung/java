@@ -37,7 +37,7 @@ public class EmpApp {
 				while (true) {
 					try {
 						System.out.println("사번입력 >>  ");
-						String empNo1 = scn.nextLine();						
+						String empNo1 = scn.nextLine();
 
 						break;
 					} catch (InputMismatchException e) {
@@ -50,12 +50,11 @@ public class EmpApp {
 				System.out.println("전화번호 >> ");
 				String telNO = scn.nextLine();
 				System.out.println("입사일자 >> ");
-				String hireDate = scn.nextLine();				
+				String hireDate = scn.nextLine();
 				System.out.println("급여 >> ");
 				int salary = Integer.parseInt(scn.nextLine());
-				
-				
-				if(dao.registerEmp(new Employee(empNo, eName, telNO, "", salary))) {
+
+				if (dao.registerEmp(new Employee(empNo, eName, telNO, "", salary))) {
 				}
 				System.out.println("등록성공");
 				break;
@@ -68,7 +67,7 @@ public class EmpApp {
 				System.out.println("사번 이름 전화번호");
 				for (Employee empl : result) {
 					if (empl != null) {
-						System.out.println(empl.empInfo());
+						System.out.println(empl);
 					}
 				}
 				break;
@@ -78,9 +77,8 @@ public class EmpApp {
 				String empNo1 = scn.nextLine();
 				System.out.println("급여 >> ");
 				int sal = Integer.parseInt(scn.nextLine());
-				
-				
-				if (dao.modifyEmp(new Employee(empNo1,"","","", sal))) {
+
+				if (dao.modifyEmp(null)) {
 					System.out.println("수정완료");
 				}
 				break;
@@ -101,7 +99,7 @@ public class EmpApp {
 				System.out.println("사번 이름 입사일자");
 				for (Employee empl : empResult) {
 					if (empl != null) {
-						System.out.println(empl.empInfo());
+						System.out.println(empl);
 					}
 				}
 				break;

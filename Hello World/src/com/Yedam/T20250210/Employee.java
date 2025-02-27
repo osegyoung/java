@@ -37,12 +37,12 @@ public class Employee {
 	}
 
 	// 사번, 이름, 연락처, 급여.
-	public String empInfo(empNo, empName, telNO, hireDate, "") {
-		// 사번 이름 연락처 급여
-		// ---------------------
-		// 1001 홍길동 234-1234 250
-		return empNO + " " + empName + " " + telNO + " " + hireDate + " " + salary;
-	}
+//	public String empInfo(empNo, empName, telNO, hireDate, "") {
+//		// 사번 이름 연락처 급여
+//		// ---------------------
+//		// 1001 홍길동 234-1234 250
+//		return empNO + " " + empName + " " + telNO + " " + hireDate + " " + salary;
+//	}
 
 	// getter,setter
 
